@@ -1,6 +1,6 @@
 struct Engineer {
 	const char *title;
-	void *(*vtable[1])();
+	void (*vtable[1])();
 };
 
 const char* Engineer_getTitle(struct Engineer *this);
