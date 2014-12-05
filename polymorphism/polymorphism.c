@@ -1,6 +1,6 @@
 struct Engineer {
 	const char *title;
-	void* (*vtable[1]) (struct Engineer *this);
+	void *(*vtable[1])(void*);
 };
 
 const char* Engineer_getTitle(struct Engineer *this);
@@ -55,11 +55,11 @@ int main(int argc, char *argv[]) {
 	PrEngineer_init(&pr);
 
 	struct Engineer *engp = &eng;
-	printf("%s\n", (const char *)engp->vtable[0](engp));
+	printf("%s\n", ((const char *(*)(struct Engineer *this))engp->vtable[0])(engp));
 	engp = &sr;
-	printf("%s\n", (const char *)engp->vtable[0](engp));
+	printf("%s\n", ((const char *(*)(struct Engineer *this))engp->vtable[0])(engp));
 	engp = &pr;
-	printf("%s\n", (const char *)engp->vtable[0](engp));
+	printf("%s\n", ((const char *(*)(struct Engineer *this))engp->vtable[0])(engp));
 
 	return 0;
 }
