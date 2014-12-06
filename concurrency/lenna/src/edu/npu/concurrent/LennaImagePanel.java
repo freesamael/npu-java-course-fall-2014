@@ -1,4 +1,4 @@
-package edu.npu.swing;
+package edu.npu.concurrent;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;

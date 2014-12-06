@@ -1,4 +1,4 @@
-package edu.npu.swing;
+package edu.npu.concurrent;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,6 +17,7 @@ public class LoadLenna {
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
 
+		// Button to load Lenna on main thread.
 		JButton loadLennaButton = new JButton("Load Lenna (main thread)");
 		loadLennaButton.addActionListener(new ActionListener() {
 
@@ -25,11 +26,12 @@ public class LoadLenna {
 				JDialog dialog = new JDialog();
 				JPanel lenna = new LennaImagePanel();
 				dialog.add(lenna);
-				dialog.setSize(400, 400);
+				dialog.setSize(400, 240);
 				dialog.setVisible(true);
 			}
 		});
 
+		// Button to load Lenna on a background thread.
 		JButton threadedLoadLennaButton = new JButton(
 				"Load Lenna (background thread)");
 		threadedLoadLennaButton.addActionListener(new ActionListener() {
@@ -39,11 +41,12 @@ public class LoadLenna {
 				JDialog dialog = new JDialog();
 				JPanel lenna = new ThreadedLennaImagePanel();
 				dialog.add(lenna);
-				dialog.setSize(400, 400);
+				dialog.setSize(400, 240);
 				dialog.setVisible(true);
 			}
 		});
 
+		// Setup UI.
 		frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
 		frame.add(loadLennaButton);
 		frame.add(threadedLoadLennaButton);
