@@ -3,13 +3,19 @@ package tw.edu.npu.mis.sample;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class SampleActivity extends Activity
-{
-    /** Called when the activity is first created. */
-    @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-    }
+/**
+ * The main entry activity.
+ * 
+ * @author samael_wang
+ *
+ */
+public class SampleActivity extends Activity {
+
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_sample);
+	}
+
 }
