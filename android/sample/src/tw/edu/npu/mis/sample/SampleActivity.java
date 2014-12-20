@@ -10,6 +10,7 @@ import android.os.Bundle;
  *
  */
 public class SampleActivity extends Activity {
+	private static final String LOG_TAG = "SampleActivity";
 
 	/** Called when the activity is first created. */
 	@Override
